@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/EmergencIA-frontend/static/css/main.dc0d3fed.css",
+    "main.js": "/EmergencIA-frontend/static/js/main.4addebc2.js",
+    "static/media/logo.png": "/EmergencIA-frontend/static/media/logo.6e1bc2d4d801d58ef441.png",
+    "index.html": "/EmergencIA-frontend/index.html",
+    "main.dc0d3fed.css.map": "/EmergencIA-frontend/static/css/main.dc0d3fed.css.map",
+    "main.4addebc2.js.map": "/EmergencIA-frontend/static/js/main.4addebc2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc0d3fed.css",
+    "static/js/main.4addebc2.js"
+  ]
+}
