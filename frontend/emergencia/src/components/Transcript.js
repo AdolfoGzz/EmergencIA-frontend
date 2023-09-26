@@ -8,8 +8,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
-let transcript='hola'
-
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
       padding: theme.spacing(2),
@@ -19,7 +17,8 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     },
   }));
   
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs(props) {
+  const transcript=props.transcript;
     const [open, setOpen] = React.useState(false);
   
     const handleClickOpen = () => {

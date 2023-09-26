@@ -9,14 +9,13 @@ import Transcript from './Transcript';
 function CustomRow(props){
     return(
         <TableRow>
-            <TableCell align="center">Nombre: Juan Lopez Sexo: Masculino Edad: 47 años</TableCell>
-            <TableCell align="center">Persona herida por atropello, parece respirar pero requier asitencia medica inmediata. La persona atropellada parece tener aproximadamente unos 30 años.</TableCell>
+            <TableCell align="center">{props.info}</TableCell>
             <TableCell align="center"><Maps/></TableCell>
-            <TableCell align="center"><Emociones/></TableCell>
-            <TableCell align="center"><NivelRiesgo nivel = {0.5}/></TableCell>
-            <TableCell align="center"><Status/></TableCell>
-            {/* Arreglar la imagen */}
-            <TableCell align="center"><Transcript/></TableCell>
+            <TableCell align="center">{props.desc}</TableCell>
+            <TableCell align="center"><Emociones emocion1={props.emocion1} emocion2={props.emocion2} emocion3={props.emocion3}/></TableCell>
+            <TableCell align="center"><NivelRiesgo nivel = {props.nivel}/></TableCell>
+            <TableCell align="center"><Status accion={props.accion}/></TableCell>
+            <TableCell align="center"><Transcript transcript={props.transcript}/></TableCell>
         </TableRow>
     );
 }

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 
-const action = 'Accion inmediata a tomar';
 
 const emocionStyle = {
   height: 40,
@@ -57,8 +56,10 @@ function StatusSwitch({ status }) {
   }
 }
 
-function Status() {
+function Status(props) {
+  const accion = props.accion;
   const [counter, setCounter] = useState(1);
+  console.log(accion);
 
   const counterIncrease = () => {
     if (counter < 4) {
@@ -78,13 +79,12 @@ function Status() {
         flexDirection: 'column',
         gap: 1,
       }}
-      onClick={counterIncrease}
-      style={{cursor:'pointer'}}
+      
     >
-      <Box sx={emocionStyle}>
+      <Box sx={emocionStyle} onClick={counterIncrease} style={{cursor:'pointer'}}>
         <StatusSwitch status={counter} />
       </Box>
-      <Typography style={{fontSize: 15}}>{action}</Typography>
+      <Typography style={{fontSize: 15}}>Accion: {accion}</Typography>
     </Box>
   );
 }

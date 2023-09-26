@@ -1,9 +1,9 @@
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 
-const emocion1 = 'tristeza';
-const emocion2 = 'sorpresa';
-const emocion3 = 'enojo';
+// const emocion1 = 'tristeza';
+// const emocion2 = 'sorpresa';
+// const emocion3 = 'enojo';
 
 function capitalizeFirstLetter(str) {
   // Check if the input string is empty or null
@@ -33,14 +33,18 @@ function getColor(emocion) {
   return dictionary[emocion];
 }
 
-function Emociones() {
+function Emociones(props) {
+  const emocion1 = props.emocion1;
+  const emocion2 = props.emocion2;
+  const emocion3 = props.emocion3;
+
   const color1 = getColor(emocion1);
   const color2 = getColor(emocion2);
   const color3 = getColor(emocion3);
 
   const emocionStyle = {
     height: 30,
-    width: 130,
+    width: 140,
     bgcolor: '#E6E6E6',
     borderRadius: 3,
     display: 'flex',

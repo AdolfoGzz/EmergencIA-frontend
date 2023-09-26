@@ -5,23 +5,38 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 export default class Maps extends Component {
   render() {
     const apiKey = "AIzaSyD0-NXj_4PCe3F22tEmCGIod0D585Jgec8";
-    let dir=' ';
+
+    function getRandomLat() {
+      const minLat = 25.6866;
+      const maxLat = 25.7594;
+      const randomLat = Math.random() * (maxLat - minLat) + minLat;
+      return randomLat;
+    }
+    function getRandomLong() {
+      const minLng = -100.3659;
+      const maxLng = -100.3153;
+      const randomLng = Math.random() * (maxLng - minLng) + minLng;
+      return randomLng;
+    }
+
+    let latitud = getRandomLat();
+    let longitud = getRandomLong();
 
     return (
       <div className="container">
-        <div style={{ height: "120px", width: "300px" }}>
+        <div style={{ height: "150px", width: "300px" }}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: apiKey }}
             defaultCenter={{
-              lat: 25.651619148656884,
-              lng: -100.28969426686491,
+              lat: latitud,
+              lng: longitud,
             }}
-            defaultZoom={10.60}
+            defaultZoom={14.2}
           >
             {/* Marcador Rojo */}
             <div
-              lat={25.651619148656884}
-              lng={-100.28969426686491}
+              lat={latitud}
+              lng={longitud}
             >
               <LocationOnIcon
                 style={{
@@ -32,7 +47,7 @@ export default class Maps extends Component {
             </div>
 
             {/* Marcador Azul */}
-            <div
+            {/* <div
               lat={25.715021689621285}
               lng={-100.30185805524592}
             >
@@ -42,9 +57,8 @@ export default class Maps extends Component {
                   fontSize: 30,
                 }}
               />
-            </div>
+            </div> */}
           </GoogleMapReact>
-          <div style={{padding: '5px 0 5px 0'}}>Direccion: {dir}</div>
         </div>
       </div>
     );
